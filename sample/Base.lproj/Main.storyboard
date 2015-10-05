@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6ky-uk-Sbb">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Wpy-PF-CKd">
+            <objects>
+                <navigationController id="6ky-uk-Sbb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oDI-b6-wWt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ga1-xn-Ztv" kind="relationship" relationship="rootViewController" id="srn-wG-nYk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d3L-j7-Uws" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16" y="964"/>
+        </scene>
+        <!--Text View Controller-->
+        <scene sceneID="CfI-92-2P8">
+            <objects>
+                <viewController id="ga1-xn-Ztv" customClass="ALTextViewController" sceneMemberID="viewController">
+                    <textView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="Съешь ещё этих мягких французских булок, да выпей чаю.The quick brown fox jumps over the lazy dog" id="ZhI-jV-EGq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <connections>
+                            <outlet property="delegate" destination="ga1-xn-Ztv" id="nwB-w9-bgv"/>
+                        </connections>
+                    </textView>
+                    <navigationItem key="navigationItem" id="Am9-BY-bhc"/>
+                    <connections>
+                        <outlet property="textView" destination="ZhI-jV-EGq" id="Qva-6Q-XRh"/>
+                        <segue destination="4OB-eI-cYT" kind="show" identifier="IdentifierTranslatorViewController" id="uu4-fT-pPf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="siX-DK-aGN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="782" y="964"/>
+        </scene>
+        <!--Translator View Controller-->
+        <scene sceneID="tZ8-K6-Uyv">
+            <objects>
+                <viewController storyboardIdentifier="ALTranslatorViewController" extendedLayoutIncludesOpaqueBars="YES" id="4OB-eI-cYT" customClass="ALTranslatorViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UTT-KQ-FOq"/>
+                        <viewControllerLayoutGuide type="bottom" id="77w-7q-gXH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Q07-gs-4Xy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGf-Qu-sUu">
+                                <rect key="frame" x="16" y="110" width="568" height="30"/>
+                                <state key="normal" title="ButtonTo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonToClicked:" destination="4OB-eI-cYT" eventType="touchUpInside" id="Gjy-tr-KON"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выбранный текст:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nzd-mA-AWM">
+                                <rect key="frame" x="24" y="148" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDF-Ex-qrS">
+                                <rect key="frame" x="16" y="72" width="568" height="30"/>
+                                <state key="normal" title="ButtonFrom">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonFromClicked:" destination="4OB-eI-cYT" eventType="touchUpInside" id="dKK-Nh-VRy"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Съешь ещё этих мягких французских булок, да выпей чаю.The quick brown fox jumps over the lazy dog" translatesAutoresizingMaskIntoConstraints="NO" id="edH-gY-R7r">
+                                <rect key="frame" x="24" y="177" width="560" height="183"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Съешь ещё этих мягких французских булок, да выпей чаю.The quick brown fox jumps over the lazy dog" translatesAutoresizingMaskIntoConstraints="NO" id="cdl-N2-7Fm">
+                                <rect key="frame" x="24" y="397" width="560" height="183"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Перевод:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8aP-VM-q2f">
+                                <rect key="frame" x="24" y="368" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8aP-VM-q2f" firstAttribute="width" secondItem="edH-gY-R7r" secondAttribute="width" id="5Qf-sD-Bj2"/>
+                            <constraint firstItem="nDF-Ex-qrS" firstAttribute="leading" secondItem="Q07-gs-4Xy" secondAttribute="leadingMargin" id="CMv-aB-XOa"/>
+                            <constraint firstItem="8aP-VM-q2f" firstAttribute="width" secondItem="cdl-N2-7Fm" secondAttribute="width" id="F3i-bw-GO0"/>
+                            <constraint firstItem="cdl-N2-7Fm" firstAttribute="width" secondItem="edH-gY-R7r" secondAttribute="width" id="Fc8-rP-hBl"/>
+                            <constraint firstItem="nDF-Ex-qrS" firstAttribute="width" secondItem="HGf-Qu-sUu" secondAttribute="width" id="Hz8-wZ-fSb"/>
+                            <constraint firstItem="cdl-N2-7Fm" firstAttribute="top" secondItem="8aP-VM-q2f" secondAttribute="bottom" constant="8" id="Ivw-QN-lwB"/>
+                            <constraint firstItem="Nzd-mA-AWM" firstAttribute="top" secondItem="HGf-Qu-sUu" secondAttribute="bottom" constant="8" id="JYs-gv-tac"/>
+                            <constraint firstItem="HGf-Qu-sUu" firstAttribute="top" secondItem="nDF-Ex-qrS" secondAttribute="bottom" constant="8" symbolic="YES" id="LTN-tq-Oxl"/>
+                            <constraint firstItem="77w-7q-gXH" firstAttribute="top" secondItem="cdl-N2-7Fm" secondAttribute="bottom" constant="20" id="Oth-lu-Io3"/>
+                            <constraint firstItem="8aP-VM-q2f" firstAttribute="top" secondItem="edH-gY-R7r" secondAttribute="bottom" constant="8" id="Rnq-HD-f32"/>
+                            <constraint firstItem="cdl-N2-7Fm" firstAttribute="centerX" secondItem="edH-gY-R7r" secondAttribute="centerX" id="Rt8-0r-UvL"/>
+                            <constraint firstItem="nDF-Ex-qrS" firstAttribute="centerX" secondItem="HGf-Qu-sUu" secondAttribute="centerX" id="TLM-ri-hO9"/>
+                            <constraint firstItem="nDF-Ex-qrS" firstAttribute="trailing" secondItem="Q07-gs-4Xy" secondAttribute="trailingMargin" id="U4f-cc-fwR"/>
+                            <constraint firstItem="edH-gY-R7r" firstAttribute="top" secondItem="Nzd-mA-AWM" secondAttribute="bottom" constant="8" id="d1K-PH-U8Z"/>
+                            <constraint firstItem="edH-gY-R7r" firstAttribute="trailing" secondItem="Q07-gs-4Xy" secondAttribute="trailingMargin" id="ezs-2v-47c"/>
+                            <constraint firstItem="8aP-VM-q2f" firstAttribute="leading" secondItem="Q07-gs-4Xy" secondAttribute="leadingMargin" constant="8" id="fav-u9-5Lh"/>
+                            <constraint firstItem="edH-gY-R7r" firstAttribute="leading" secondItem="Q07-gs-4Xy" secondAttribute="leadingMargin" constant="8" id="gLs-ZN-k0l"/>
+                            <constraint firstItem="Nzd-mA-AWM" firstAttribute="leading" secondItem="Q07-gs-4Xy" secondAttribute="leadingMargin" constant="8" id="lhK-5Y-dKc"/>
+                            <constraint firstItem="Nzd-mA-AWM" firstAttribute="width" secondItem="edH-gY-R7r" secondAttribute="width" id="mMR-pj-EHq"/>
+                            <constraint firstItem="cdl-N2-7Fm" firstAttribute="height" secondItem="edH-gY-R7r" secondAttribute="height" id="nmF-nL-FrM"/>
+                            <constraint firstItem="nDF-Ex-qrS" firstAttribute="top" secondItem="UTT-KQ-FOq" secondAttribute="bottom" constant="8" symbolic="YES" id="xYg-Fr-XDs"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5Qf-sD-Bj2"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ufj-I3-uxx"/>
+                    <connections>
+                        <outlet property="buttonFrom" destination="nDF-Ex-qrS" id="NRo-Oh-3Ze"/>
+                        <outlet property="buttonTo" destination="HGf-Qu-sUu" id="TVY-Wp-lYD"/>
+                        <outlet property="labelFrom" destination="Nzd-mA-AWM" id="r19-TN-s1K"/>
+                        <outlet property="labelTo" destination="8aP-VM-q2f" id="DXK-lp-SeO"/>
+                        <outlet property="viewFrom" destination="edH-gY-R7r" id="iIF-hP-Lp0"/>
+                        <outlet property="viewTo" destination="cdl-N2-7Fm" id="5VA-X7-S0e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sov-pe-bQj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="782" y="1761"/>
+        </scene>
+    </scenes>
+</document>

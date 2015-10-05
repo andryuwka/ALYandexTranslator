@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4E7A0946-071C-4705-9DA4-5381736FE422</string>
+	<key>IDESourceControlProjectName</key>
+	<string>sample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>16847946C31299EE4F8EE0706E55479A729C2A3D</key>
+		<string>github.com:andryuwka/ALYandexTranslator.git</string>
+		<key>7953573C9A7B665E2CC90CF946FFB407E05E486B</key>
+		<string>github.com:andryuwka/ALYandexTranslator.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>sample.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>16847946C31299EE4F8EE0706E55479A729C2A3D</key>
+		<string>..</string>
+		<key>7953573C9A7B665E2CC90CF946FFB407E05E486B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:andryuwka/ALYandexTranslator.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>16847946C31299EE4F8EE0706E55479A729C2A3D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7953573C9A7B665E2CC90CF946FFB407E05E486B</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>16847946C31299EE4F8EE0706E55479A729C2A3D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>sample</string>
+		</dict>
+	</array>
+</dict>
+</plist>
