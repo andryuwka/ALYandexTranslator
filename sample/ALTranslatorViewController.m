@@ -164,7 +164,7 @@ static NSString *ALLocalization = @"ru";
   [[ALServerManager sharedManager] translate:text
       forLang:lang
       withFormat:@"plain"
-      options:@1
+      options:@"1"
       onSuccess:^(NSString *translated) {
         self.translatedText = [NSString stringWithString:translated];
         [self.viewTo setText:self.translatedText];

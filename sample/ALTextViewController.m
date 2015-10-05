@@ -33,9 +33,14 @@
   [self.menuController
       setMenuItems:[NSArray arrayWithObject:self.translateItem]];
   
-  if (![[ALServerManager sharedManager] checkInternetConnection]) {
-    [self errorInternetConnection:YES];
-  }
+  [[ALServerManager sharedManager]
+      checkInternetConnectionWithHandler:^(BOOL check) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+          if (!check) {
+            [self errorInternetConnection:YES];
+          }
+        });
+      }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,19 +80,19 @@
 }
 
 - (void)translate:(id)sender {
-  if ([[ALServerManager sharedManager] checkInternetConnection] &&
-      ([self.textView.text length] <= 9900)) {
-    [self performSegueWithIdentifier:@"IdentifierTranslatorViewController"
-                              sender:self];
-  } else {
-    if (![[ALServerManager sharedManager] checkInternetConnection]) {
-      [self errorInternetConnection:YES];
-    }
 
-    if ([self.textView.text length] <= 9900) {
-      [self errorTextLength:YES];
-    }
-  }
+  [[ALServerManager sharedManager]
+      checkInternetConnectionWithHandler:^(BOOL check) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+          if (check) {
+            [self
+                performSegueWithIdentifier:@"IdentifierTranslatorViewController"
+                                    sender:self];
+          } else {
+            [self errorInternetConnection:YES];
+          }
+        });
+      }];
 }
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView {

@@ -45,18 +45,16 @@
 
 #pragma mark - Check Internet Connection
 
-- (BOOL)checkInternetConnection {
-  NSString *urlString = @"http://www.google.com/";
+- (void)checkInternetConnectionWithHandler:(void (^)(BOOL))handler {
+  NSString *urlString = @"https://www.google.com/";
   NSURL *url = [NSURL URLWithString:urlString];
   NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
   [request setHTTPMethod:@"HEAD"];
-  NSHTTPURLResponse *response;
-
-  [NSURLConnection sendSynchronousRequest:request
-                        returningResponse:&response
-                                    error:NULL];
-
-  return ([response statusCode] == 200) ? YES : NO;
+  [[[NSURLSession sharedSession]
+      dataTaskWithRequest:request
+   completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+     handler(error == NULL);
+   }] resume];
 }
 
 #pragma mark - GET requests from Server
@@ -118,7 +116,7 @@
 - (void)translate:(NSString *)text
           forLang:(NSString *)lang
        withFormat:(NSString *)format
-          options:(NSInteger *)options
+          options:(NSString *)options
         onSuccess:(void (^)(NSString *translated))success
         onFailure:(void (^)(NSError *error, NSInteger code))failure {
   NSDictionary *params = [NSDictionary

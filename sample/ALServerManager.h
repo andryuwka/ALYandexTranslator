@@ -35,6 +35,6 @@ static NSString *ALTranslateTranslate = @"translate";
         onSuccess:(void (^)(NSString *text))success
         onFailure:(void (^)(NSError *error, NSInteger code))failure;
 
-- (BOOL)checkInternetConnection;
+- (void)checkInternetConnectionWithHandler:(void (^)(BOOL))handler;
 
 @end
